@@ -1,69 +1,101 @@
-# React + TypeScript + Vite
+# Space Tourism Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive web app built as part of the Frontend Mentor Space Tourism challenge where uers can explore destinations, crew, and technology.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Responsive design for mobile, tablet, and desktop
+- Multi-page navigation: Home, Destination, Crew, Technology
+- Dynamic content loaded from a local JSON file using fetch (crew, destinations, technology)
+- Smooth transitions and modern layout with active/hover states
 
-## Expanding the ESLint configuration
+## 🛠️ Built With
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React**
+- **React Router**
+- **TypeScript**
+- **Tailwind CSS**
+- **Zustand**
+- **Vite**
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Links
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- Frontend mentor challenge
+- Live url
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18+ recommended)
+- or npm/yarn
+
+### Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/Ejiro-Frances/space_tourism.git
+
+# Navigate to project folder
+cd space_tourism
+
+# Install dependencies
+  npm install
+# or
+yarn install
+
+ # Run it locally
+ npm run dev
+# or
+yarn dev
+
+#  Then open http://localhost:5173/ (or the port shown in terminal).
+
+
+#### Build for Production
+npm run build
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+space_tourism/
+├── public/
+| ├── crew/ # Images
+| ├── destination/ # Images
+| ├── home/ # Images
+| ├── shared/ # Images
+| ├── technology/ # Images
+| └── data.json
+├── src/
+│ ├── components/
+| ├── ui/
+| ├── crewtab.tsx
+| ├── destinationtab.tsx
+| ├── header.tsx
+| └── techtab.tsx
+│ ├── lib/
+│ ├── pages/
+│ ├── types/
+| ├── App.tsx
+| ├── index.css
+│ ├── main.tsx
+│ └── vite-env.d.ts
+├── components.json
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Credits
+
+Design inspired by Frontend Mentor - Space Tourism
+
+# License
+
+This project is open source and available under the MIT License.
