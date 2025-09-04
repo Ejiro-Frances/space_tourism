@@ -17,30 +17,28 @@ const DestinationTab = ({ destinations }: DestinationTabProps) => {
   }, [destinations, selectedDestination]);
 
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-10">
+    <section className="grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-8 lg:py-10">
       {/* left side - selected destination image */}
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center md:p-[42px]">
         {selectedDestination && (
           <img
             src={selectedDestination.images?.png}
             alt={selectedDestination.name}
-            className="max-w-xs lg:max-w-md"
+            className="max-w-[150px] md:max-w-[300px] lg:max-w-[480px]"
           />
         )}
       </div>
 
       {/* right side - details + triggers */}
-      <div className="flex flex-col gap-6 lg:gap-12 px-10">
+      <div className="flex flex-col gap-6 lg:gap-12 md:px-6 lg:px-10">
         {/* triggers */}
-        <div className="flex gap-8">
+        <div className="flex justify-center lg:justify-start gap-8">
           {destinations.map((d) => (
             <button
               key={d.name}
               onClick={() => setSelectedDestination(d)}
-              className={`uppercase tracking-wide pb-2 ${
-                selectedDestination?.name === d.name
-                  ? "border-b-2 border-white"
-                  : "text-gray-400"
+              className={`text-sm md:text-base uppercase tracking-wide pb-2 border-b-[3px] border-transparent text-white transition-all duration-200 ease-in-out hover:border-white/50 cursor-pointer ${
+                selectedDestination?.name === d.name ? "border-white" : ""
               }`}
             >
               {d.name}
@@ -50,24 +48,24 @@ const DestinationTab = ({ destinations }: DestinationTabProps) => {
 
         {/* details */}
         {selectedDestination && (
-          <div className="space-y-4">
-            <h2 className="text-4xl lg:text-[96px] font-bellefair font-bold uppercase">
+          <div className="max-w-[514px] lg:max-w-full mx-auto space-y-4">
+            <h2 className="text-[56px] md:text-[80px] lg:text-[96px] text-center lg:text-left font-bellefair font-bold uppercase">
               {selectedDestination.name}
             </h2>
-            <p className="text-[18px] font-barlow text-[#D0D6F9] leading-[1.8]">
+            <p className="text-[15px] md:text-base lg:text-[18px] text-center lg:text-left font-barlow text-[#D0D6F9] leading-[1.8]">
               {selectedDestination.description}
             </p>
 
-            <div className="grid grid-cols-2 gap-12 mt-10 pt-10 uppercase border-t border-white/25">
-              <div className="flex flex-col gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mt-6 lg:mt-10 pt-6 lg:pt-10 uppercase border-t border-white/25">
+              <div className="flex flex-col items-center lg:items-start gap-3">
                 <p className="text-sm text-[#D0D6F9]">Avg. Distance</p>
-                <p className="text-2xl font-semibold font-bellefair">
+                <p className="text-[1.75rem] font-semibold font-bellefair">
                   {selectedDestination.distance}
                 </p>
               </div>
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col items-center gap-3">
                 <p className="text-sm text-[#D0D6F9]">Est. Travel Time</p>
-                <p className="text-2xl font-semibold font-bellefair">
+                <p className="text-[1.75rem] font-semibold font-bellefair">
                   {selectedDestination.travel}
                 </p>
               </div>

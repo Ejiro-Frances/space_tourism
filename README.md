@@ -21,7 +21,8 @@ A responsive web app built as part of the Frontend Mentor Space Tourism challeng
 ## Links
 
 - Frontend mentor challenge
-- Live url
+- View [Live](https://space-tour-pi.vercel.app/)
+- View [code](https://github.com/Ejiro-Frances/space_tourism.git)
 
 ## Getting Started
 
@@ -57,7 +58,7 @@ npm run build
 
 ```
 
-# Project Structure
+## Project Structure
 
 space_tourism/
 ├── public/
@@ -92,9 +93,9 @@ space_tourism/
 ├── tsconfig.node.json
 └── vite.config.ts
 
-### Credits
+### Acknowledgement
 
-Design inspired by Frontend Mentor - Space Tourism
+Design inspired by Frontend Mentor - [Space Tourism](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)
 
 # License
 
