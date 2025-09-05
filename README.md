@@ -4,6 +4,8 @@ A responsive web app built as part of the Frontend Mentor Space Tourism challeng
 
 ![](./public/screenshot.png)
 
+---
+
 ### The challenge
 
 Users should be able to:
@@ -25,7 +27,7 @@ Users should be able to:
 - **React Router**
 - **TypeScript**
 - **Tailwind CSS**
-- **Zustand**
+- **Framer motion**
 - **Vite**
 
 ## Links
