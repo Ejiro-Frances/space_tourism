@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Separator } from "./ui/separator";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -13,6 +13,25 @@ const links = [
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isMenuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   return (
     <header className="flex justify-between items-center h-[88px] md:h-[96px] lg:h-[138px] p-6 sm:py-8 sm:pr-0 lg:pl-12 lg:pt-12 lg:pr-0 relative">
@@ -54,11 +73,11 @@ const Header = () => {
               to={link.path}
               className={({ isActive }) =>
                 `flex items-center gap-3 h-full transition-colors duration-300 border-b-[3px] border-transparent hover:border-white/50 text-white ${
-                  isActive ? "border-white" : "hover:text-white"
+                  isActive ? "border-white" : ""
                 }`
               }
             >
-              <span className="font-bold lg:mr-3">
+              <span className="font-bold lg:mr-1">
                 {i.toString().padStart(2, "0")}
               </span>
               <span>{link.name}</span>
@@ -69,7 +88,10 @@ const Header = () => {
 
       {/* Mobile slide-out menu */}
       {isMenuOpen && (
-        <nav className="absolute top-0 right-0 md:hidden w-3/4 h-screen bg-white/10 backdrop-blur-lg z-40">
+        <nav
+          ref={menuRef}
+          className="absolute top-0 right-0 md:hidden w-3/4 h-screen bg-white/10 backdrop-blur-lg z-40"
+        >
           <ul className="flex flex-col gap-6 uppercase tracking-[2px] font-barlow p-6 pt-20 text-white">
             {links.map((link, i) => (
               <li key={link.name}>

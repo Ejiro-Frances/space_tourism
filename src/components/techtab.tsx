@@ -46,7 +46,7 @@ const TechTab = ({ technologies }: TechtabProps) => {
             <button
               key={t.name}
               onClick={() => setSelectedTechnology(t)}
-              className={`flex justify-center items-center w-10 lg:w-[80px] h-10 lg:h-[80px] rounded-full border border-white/25 hover:border-white  ${
+              className={`flex justify-center items-center w-10 lg:w-[80px] h-10 lg:h-[80px] lg:text-[2rem] rounded-full border border-white/25 hover:border-white  ${
                 selectedTechnology?.name === t.name
                   ? "bg-white text-[#0B0D17]"
                   : "bg-transparent text-white"
@@ -66,7 +66,7 @@ const TechTab = ({ technologies }: TechtabProps) => {
             <h2 className="text-2xl md:text-[40px] lg:text-4xl lg:text-[56px] text-center lg:text-left font-bellefair font-bold uppercase">
               {selectedTechnology.name}
             </h2>
-            <p className="text-[15px] md:text-base lg:text-[18px] text-center lg:text-left font-barlow text-[#D0D6F9] leading-[1.8]">
+            <p className="text-[15px] md:text-base lg:text-[18px] text-center lg:text-left font-barlow text-[#D0D6F9] leading-[1.8] px-4 md:px-0">
               {selectedTechnology.description}
             </p>
           </div>

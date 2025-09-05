@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import type { DataType } from "@/types/types";
+import type { DestinationData } from "@/types/types";
 
 interface DestinationTabProps {
-  destinations: DataType[];
+  destinations: DestinationData[];
 }
 
 const DestinationTab = ({ destinations }: DestinationTabProps) => {
   const [selectedDestination, setSelectedDestination] =
-    useState<DataType | null>(null);
+    useState<DestinationData | null>(null);
 
   // Set default when destinations load
   useEffect(() => {

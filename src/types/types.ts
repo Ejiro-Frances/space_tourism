@@ -1,15 +1,21 @@
-export type DataType = {
+export type BaseDate = {
   name: string;
   images: {
     png: string;
     webp: string;
   };
-  description?: string;
-  distance?: string;
-  travel?: string;
-  role?: string;
-  bio?: string;
 };
+
+export type DestinationData = {
+  description: string;
+  distance: string;
+  travel: string;
+} & BaseDate;
+
+export type CrewData = {
+  role: string;
+  bio: string;
+} & BaseDate;
 
 export type Techdata = {
   name: string;

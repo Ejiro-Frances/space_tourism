@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-import Header from "@/components/header";
 import TechTab from "@/components/techtab";
 
 import { fetchData } from "@/lib/getData";
@@ -14,9 +13,7 @@ const Technology = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[url('/technology/background-technology-mobile.jpg')] sm:bg-[url('/technology/background-technology-tablet.jpg')] lg:bg-[url('/technology/background-technology-desktop.jpg')] bg-cover bg-no-repeat text-white">
-      <Header />
-
+    <div>
       {/* main content */}
       <div className="max-w-[1275px] ml-auto py-4 px-6 md:p-10 lg:pl-20 lg:pr-0 space-y-10">
         <div className="flex justify-center md:justify-start gap-4">
